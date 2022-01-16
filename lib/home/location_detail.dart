@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:new_flutter_app/home/text_section.dart';
 
+import 'image_banner.dart';
+
 class LocationDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -10,12 +12,13 @@ class LocationDetail extends StatelessWidget {
         ),
         body: Column(
           // axis top to down
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            TextSection(Colors.red, "RED"),
-            TextSection(Colors.black45, "BLACK"),
-            TextSection(Colors.blue, "Blue"),
+            ImageBanner("assets/images/tuffy.jpg"),
+            TextSection("heelo", "RED"),
+            TextSection('trung', "BLACK"),
+            TextSection('Linh', "Blue"),
           ],
         ));
   }
