@@ -11,6 +11,7 @@ class TextSection extends StatelessWidget {
   // new way - no body function
   TextSection(this._title, this._body);
 
+  // context tu mainap
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -19,11 +20,18 @@ class TextSection extends StatelessWidget {
       children: [
         Container(
           padding: const EdgeInsets.fromLTRB(_hPad, 32.0, _hPad, 4.0),
-          child: Text(_title),
+          child: Text(
+            _title,
+            // style: TextStyle(), // customize css
+            style: Theme.of(context).textTheme.headline1,
+          ),
         ),
         Container(
           padding: const EdgeInsets.fromLTRB(_hPad, 4.0, _hPad, 4.0),
-          child: Text(_body),
+          child: Text(
+            _body,
+            style: Theme.of(context).textTheme.bodyText1,
+          ),
         ),
       ],
     );
