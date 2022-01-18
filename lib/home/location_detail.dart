@@ -5,11 +5,13 @@ import 'package:new_flutter_app/models/location.dart';
 import 'image_banner.dart';
 
 class LocationDetail extends StatelessWidget {
+  final int _locationId;
+
+  LocationDetail(this._locationId);
+
   @override
   Widget build(BuildContext context) {
-    final locations = Location.fetchAll();
-    final location = locations.first;
-
+    final location = Location.fetchById(_locationId);
     return Scaffold(
         appBar: AppBar(
           title: Text("hello"),
@@ -19,7 +21,7 @@ class LocationDetail extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            ImageBanner(location.imagePath),
+            ImageBanner(location!.imagePath),
 
             // co the dung spread nhu js
             // ...textSections(location)
